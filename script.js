@@ -28,7 +28,11 @@ function generate() {
         return;
     }
 
-    const text = normalizeText(original);
+    let text = normalizeText(original);
+
+    // Se a pessoa escrever LUCY, o tradutor transforma em MILENA
+    text = text.replace(/LUCY/g, "MILENA");
+
     result.innerHTML = "";
 
     for (const char of text) {
@@ -47,7 +51,6 @@ function generate() {
             img.title = char;
             result.appendChild(img);
         } else {
-            // Mantém números e símbolos que não existem no alfabeto.
             const unknown = document.createElement("span");
             unknown.className = "unknown";
             unknown.textContent = char;
