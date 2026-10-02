@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfabeto de Neutrófilos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <div class="microscope">🔬</div>
+            <h1>Alfabeto de Neutrófilos</h1>
+            <p>Escreva uma frase e transforme cada letra em um neutrófilo.</p>
+        </header>
+
+        <section class="card">
+            <label for="text-input">O que você quer escrever?</label>
+            <textarea id="text-input" maxlength="300"
+                placeholder="Digite uma frase aqui..."></textarea>
+
+            <div class="actions">
+                <button id="generate-btn">Transformar em neutrófilos</button>
+                <button id="clear-btn" class="secondary">Limpar</button>
+            </div>
+        </section>
+
+        <section class="card result-card">
+            <div class="result-header">
+                <h2>Resultado</h2>
+                <button id="download-btn" class="small-btn" disabled>Baixar imagem</button>
+            </div>
+
+            <div id="result" class="result" aria-live="polite">
+                <p class="empty">Sua frase aparecerá aqui 💜</p>
+            </div>
+        </section>
+
+        <section class="card alphabet-card">
+            <h2>Alfabeto</h2>
+            <p class="hint">Cada letra abaixo corresponde a um neutrófilo da imagem original.</p>
+            <div id="alphabet" class="alphabet"></div>
+        </section>
+
+        <footer>
+            Feito total com GPT rsrs
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

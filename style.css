@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(150, 100, 255, .13), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(80, 170, 255, .12), transparent 28%),
+        #f7f4fb;
+    color: #332b40;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 45px 0 35px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.microscope {
+    font-size: 42px;
+    margin-bottom: 6px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(30px, 5vw, 48px);
+    color: #56358c;
+}
+
+header p {
+    margin: 8px auto 0;
+    color: #756c80;
+    max-width: 650px;
+}
+
+.card {
+    background: rgba(255, 255, 255, .88);
+    border: 1px solid rgba(91, 63, 122, .12);
+    border-radius: 22px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 12px 35px rgba(60, 35, 85, .08);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    border: 2px solid #ded5e9;
+    border-radius: 15px;
+    padding: 15px;
+    font: inherit;
+    color: #332b40;
+    outline: none;
+    transition: .2s;
+}
+
+textarea:focus {
+    border-color: #8d61bd;
+    box-shadow: 0 0 0 4px rgba(141, 97, 189, .10);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+button {
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 18px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .15s, opacity .15s, box-shadow .15s;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+#generate-btn {
+    background: #7045a5;
+    color: white;
+    box-shadow: 0 7px 18px rgba(112, 69, 165, .22);
+}
+
+.secondary, .small-btn {
+    background: #eee9f3;
+    color: #574961;
+}
+
+button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 0;
+    color: #56358c;
+}
+
+.small-btn {
+    padding: 9px 13px;
+    font-size: 14px;
+}
+
+.result {
+    min-height: 180px;
+    padding: 20px;
+    border-radius: 17px;
+    background: #faf8fc;
+    border: 1px dashed #d8cde4;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.empty {
+    color: #938a9c;
+    text-align: center;
+}
+
+.neutro {
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform .15s;
+}
+
+.neutro:hover {
+    transform: scale(1.08);
+}
+
+.space {
+    width: 30px;
+    height: 1px;
+}
+
+.unknown {
+    min-width: 34px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #9b91a5;
+}
+
+.hint {
+    color: #81788a;
+    margin-top: 6px;
+}
+
+.alphabet {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.letter-card {
+    text-align: center;
+    background: #faf8fc;
+    border: 1px solid #e7deed;
+    border-radius: 15px;
+    padding: 9px;
+}
+
+.letter-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.letter-card strong {
+    display: block;
+    margin-top: 6px;
+    color: #56358c;
+}
+
+footer {
+    text-align: center;
+    color: #8b8291;
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 94%;
+        padding-top: 25px;
+    }
+
+    .card {
+        padding: 17px;
+        border-radius: 18px;
+    }
+
+    .neutro {
+        width: 61px;
+        height: 61px;
+    }
+
+    .space {
+        width: 16px;
+    }
+
+    .result {
+        gap: 3px;
+        padding: 12px;
+    }
+
+    .result-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
